@@ -13,7 +13,8 @@ from pathlib import Path, PureWindowsPath
 # Choose operating system
 opsys = 'mac' # 'mac' or 'pc'
 if opsys == 'mac':
-	csv_root = Path('/Users/Neil/Dropbox/Documents/Apple and Python Scripts/F1 Image Labelling Py')
+	# csv_root = Path('/Users/Neil/Dropbox/Documents/Apple and Python Scripts/F1 Image Labelling Py')
+	csv_root = Path('/Users/Neil/Library/Mobile Documents/com~apple~CloudDocs/Image Labelling')
 else:
 	csv_root = Path(r'C:\Users\neil.cameron\OneDrive - McLaren Technology Group')
 
@@ -22,7 +23,7 @@ img_size = 1000
 
 # Set window size
 window_width = 1000
-window_height = 760
+window_height = 790
 
 # Function for parsing the input and output directories
 def main(argv):
@@ -142,9 +143,9 @@ def gui_chrome(scaled_images_list, lbl_list, img_index, window_width):
 	screen.blit(pygame.image.load(scaled_images_list[img_index]), (0, 0))
 	
 	# Show text options
-	screen.blit(font.render(legend_l1, True, white), (10, (window_height-40)))
-	screen.blit(font.render(legend_l2, True, white), (10, (window_height-15)))
-	screen.blit(font.render(legend_l3, True, white), (10, (window_height+10)))
+	screen.blit(font.render(legend_l1, True, white), (10, (window_height-55)))
+	screen.blit(font.render(legend_l2, True, white), (10, (window_height-35)))
+	screen.blit(font.render(legend_l3, True, white), (10, (window_height-15)))
 	screen.blit(font.render(legend_l4, True, white), (10, 10))
 	
 	# Show any labels applied
@@ -189,7 +190,7 @@ while not done:
 	
 	# Initial run
 	gui_chrome(scaled_images_list, lbl_list, img_index, window_width)
-	
+
 	pressed = pygame.key.get_pressed()
 	
 	# Check for image labelling input
